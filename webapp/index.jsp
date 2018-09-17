@@ -1,16 +1,15 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: matma
-  Date: 17.09.2018
-  Time: 12:19
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<body>
+<h2>Book Manager</h2>
+<form action="save" method="POST">
+  <input type="text" name="isbn" placeholder="ISBN" /><br />
+  <input type="text" name="name" placeholder="Name" /><br />
+  <input type="text" name="author" placeholder="Author" /><br />
+  <input type="submit" value="Save" />
+</form>
+<form action="get" method="POST">
+  <input type="number" name="id" placeholder="BookID" /><br />
+  <input type="submit" value="Get" />
+</form>
+</body>
 </html>

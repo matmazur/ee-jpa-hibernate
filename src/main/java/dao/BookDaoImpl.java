@@ -2,43 +2,36 @@ package dao;
 
 import model.Book;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.enterprise.context.RequestScoped;
+import javax.persistence.*;
 
+@RequestScoped
 public class BookDaoImpl implements BookDao {
 
 
+    @PersistenceUnit(name = "persistanceUnit")
     private EntityManagerFactory factory;
-    private EntityManager en;
-
-
-    public BookDaoImpl() {
-        factory = Persistence.createEntityManagerFactory("TestPersistence");
-        en = factory.createEntityManager();
-    }
 
 
     @Override
     public void save(Book book) {
 
+        EntityManager en = factory.createEntityManager();
         EntityTransaction tran = en.getTransaction();
         tran.begin();
         en.persist(book);
         tran.commit();
+        en.close();
     }
 
     @Override
     public Book get(Long id) {
+
+        EntityManager en = factory.createEntityManager();
+        en.close();
+
         return en.find(Book.class, id);
     }
 
-    @Override
-    public void cleanUp() {
 
-        en.close();
-        factory.close();
-
-    }
 }
