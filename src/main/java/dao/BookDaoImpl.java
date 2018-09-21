@@ -9,28 +9,30 @@ import javax.persistence.*;
 public class BookDaoImpl implements BookDao {
 
 
-    @PersistenceUnit(name = "persistanceUnit")
-    private EntityManagerFactory factory;
+    private EntityManager entity;
 
+    public BookDaoImpl() {
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("bookPersistence");
+        entity = factory.createEntityManager();
+    }
 
     @Override
     public void save(Book book) {
 
-        EntityManager en = factory.createEntityManager();
-        EntityTransaction tran = en.getTransaction();
-        tran.begin();
-        en.persist(book);
-        tran.commit();
-        en.close();
+        entity.getTransaction().begin();
+        entity.persist(book);
+        entity.getTransaction().commit();
     }
 
     @Override
     public Book get(Long id) {
 
-        EntityManager en = factory.createEntityManager();
-        en.close();
 
-        return en.find(Book.class, id);
+        return entity.find(Book.class, id);
+    }
+
+    public void close(){
+        entity.close();
     }
 
 

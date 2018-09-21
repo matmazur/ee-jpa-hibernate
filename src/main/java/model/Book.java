@@ -1,9 +1,7 @@
 package model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -13,10 +11,17 @@ public class Book implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "isbn")
     private String isbn;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "author")
     private String author;
 
     public Book() {
