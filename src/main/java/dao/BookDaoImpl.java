@@ -31,6 +31,8 @@ public class BookDaoImpl implements BookDao {
         return entity.find(Book.class, id);
     }
 
+
+    @Override
     public void close(){
         entity.close();
     }

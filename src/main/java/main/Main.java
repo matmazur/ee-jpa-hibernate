@@ -1,5 +1,9 @@
 package main;
 
+import dao.BookDao;
+import dao.BookDaoImpl;
+import model.Book;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -24,6 +28,11 @@ public class Main
         }
 // THIS ABOVE WORKS CORRECLTY  -  CONNECTION TO THE DB IS PROPER
 
+
+        BookDao dao = new BookDaoImpl();
+
+        dao.save(new Book("r432432","About crown and glory","Mark Twain"));
+        dao.close();
 
     }
 }
