@@ -7,7 +7,7 @@
   <input type="text" name="author" placeholder="Author" /><br />
   <input type="submit" value="Save" />
 </form>
-<form action="/read" method="POST">
+<form action="/read" method="GET">
   <input type="number" name="id" placeholder="BookID" /><br />
   <input type="submit" value="Get" />
 </form>
