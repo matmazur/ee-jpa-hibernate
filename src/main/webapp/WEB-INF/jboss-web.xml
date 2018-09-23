@@ -5,5 +5,4 @@
            xsi:schemaLocation="http://www.jboss.com/xml/ns/javaee http://www.jboss.org/j2ee/schema/jboss-web_10_0.xsd">
 
     <context-root>/</context-root>
-
 </jboss-web>

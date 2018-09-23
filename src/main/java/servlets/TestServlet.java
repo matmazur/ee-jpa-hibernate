@@ -1,9 +1,5 @@
 package servlets;
 
-import dao.BookDao;
-import model.Book;
-
-import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,22 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/read")
-public class ReadServlet extends HttpServlet {
-
-
-    @Inject
-    BookDao dao;
-
+@WebServlet("/text")
+public class TestServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 
-        Long id = Long.valueOf(req.getParameter("id"));
-        Book book = dao.get(id);
-
-        resp.getWriter().println(book);
-
+        resp.getWriter().println("Helo");
     }
 }

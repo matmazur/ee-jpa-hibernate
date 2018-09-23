@@ -8,9 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>All good</title>
+    <title>No good</title>
 </head>
 <body>
-<p>Bravo or something</p>
+<p>you bastard! something went wrong</p>
+<a href="/">here, use this to go back</a>
+
 </body>
 </html>

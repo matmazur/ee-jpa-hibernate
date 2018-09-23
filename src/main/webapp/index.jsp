@@ -1,7 +1,7 @@
 <html>
 <body>
 <h2>Book Manager</h2>
-<form action="save" method="POST">
+<form action="/write" method="POST">
   <input type="text" name="isbn" placeholder="ISBN" /><br />
   <input type="text" name="name" placeholder="Name" /><br />
   <input type="text" name="author" placeholder="Author" /><br />
