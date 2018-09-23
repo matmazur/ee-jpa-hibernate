@@ -5,14 +5,16 @@ import model.Book;
 import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
 import javax.persistence.*;
+import javax.transaction.Transactional;
 
-@Stateless
+@RequestScoped
 public class BookDaoImpl implements BookDao {
 
     @PersistenceContext
     private EntityManager entityManager;
 
 
+    @Transactional
     @Override
     public Long save(Book book) {
 
