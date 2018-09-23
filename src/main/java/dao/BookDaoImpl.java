@@ -2,10 +2,11 @@ package dao;
 
 import model.Book;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
 import javax.persistence.*;
 
-@RequestScoped
+@Stateless
 public class BookDaoImpl implements BookDao {
 
     @PersistenceContext
