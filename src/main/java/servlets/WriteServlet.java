@@ -27,16 +27,18 @@ public class WriteServlet extends HttpServlet {
             String title = req.getParameter("name");
             String author = req.getParameter("author");
 
+            if (!(isbn.trim().isEmpty() || title.trim().isEmpty() || author.trim().isEmpty())) {
 
-            Book book = new Book(isbn, title, author);
+                Book book = new Book(isbn, title, author);
 
-            dao.save(book);
-            resp.sendRedirect("success.jsp");
+                dao.save(book);
+                resp.sendRedirect("success.jsp");
+            }
 
-
-        }catch (Exception e){
+        } catch (Exception ignored) {
             resp.sendRedirect("failure.jsp");
         }
+        resp.sendRedirect("failure.jsp");
     }
 }
 
