@@ -8,11 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta http-equiv="refresh" content="2;url=/" />
     <title>No good</title>
 </head>
 <body>
 <p>you bastard! something went wrong</p>
-<a href="/">here, use this to go back</a>
 
 </body>
 </html>
