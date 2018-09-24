@@ -14,8 +14,8 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <dependencies>
             <dependency>
                 <groupId>org.jboss.spec</groupId>
-                <artifactId>jboss-javaee-7.0</artifactId>
-                <version>1.0.3.Final</version>
+                <artifactId>jboss-javaee-8.0.0</artifactId>
+                <version>LATEST</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -24,8 +24,6 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 
     <dependencies>
-
-
         <!-- Hibernate -->
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -38,7 +36,6 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
                 </exclusion>
             </exclusions>
         </dependency>
-
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
             <artifactId>hibernate-jpa-2.1-api</artifactId>
@@ -66,24 +63,23 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
             <scope>provided</scope>
         </dependency>
 
-
+        <!-- XML BIND -->
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
             <version>2.4.0-b180830.0359</version>
         </dependency>
-
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-impl</artifactId>
             <version>2.2.11</version>
         </dependency>
-
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-core</artifactId>
             <version>2.2.11</version>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -98,7 +94,6 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
                     <target>1.8</target>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>

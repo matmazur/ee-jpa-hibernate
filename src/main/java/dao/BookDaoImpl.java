@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 @RequestScoped
 public class BookDaoImpl implements BookDao {
 
-    @PersistenceContext
+    @PersistenceContext(name = "bookPersistence")
     private EntityManager entityManager;
 
 
