@@ -11,17 +11,17 @@ public class Book implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "book_id")
     private Long id;
 
-    @Column(name = "isbn")
+    @Column(name = "book_isbn")
     private String isbn;
 
-    @Column(name = "title")
+    @Column(name = "book_title")
     private String title;
 
-    @Column(name = "author")
+    @Column(name = "book_author")
     private String author;
 
     public Book() {
