@@ -1,7 +1,6 @@
 package servlets;
 
 import dao.BookDao;
-import model.Book;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -11,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/read")
+@WebServlet("/delete")
 public class DeleteServlet extends HttpServlet {
 
     @Inject
@@ -20,11 +19,14 @@ public class DeleteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
-        Long id = Long.valueOf(req.getParameter("id"));
-        Book book = dao.get(id);
-
-        resp.getWriter().println(book);
-
+        try {
+            Long id = Long.valueOf(req.getParameter("id"));
+            dao.delete(id);
+            resp.sendRedirect("success.jsp");
+        } catch (Exception ignored) {
+            resp.sendRedirect("failure.jsp");
+        }
+        resp.sendRedirect("failure.jsp");
     }
 }
+

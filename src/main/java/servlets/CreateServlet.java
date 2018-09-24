@@ -29,7 +29,7 @@ public class CreateServlet extends HttpServlet {
 
                 Book book = new Book(isbn, title, author);
 
-                dao.save(book);
+                dao.create(book);
                 resp.sendRedirect("success.jsp");
             }
 

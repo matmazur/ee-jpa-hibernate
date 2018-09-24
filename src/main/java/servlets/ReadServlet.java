@@ -25,7 +25,7 @@ public class ReadServlet extends HttpServlet {
 
 
         Long id = Long.valueOf(req.getParameter("id"));
-        Book book = dao.get(id);
+        Book book = dao.read(id);
 
         resp.getWriter().println(book);
 

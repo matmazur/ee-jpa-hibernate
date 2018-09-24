@@ -13,19 +13,28 @@ public class BookDaoImpl implements BookDao {
     @PersistenceContext(name = "bookPersistence")
     private EntityManager entityManager;
 
-
     @Transactional
     @Override
-    public Long save(Book book) {
-
-        entityManager.persist(book);
-        return book.getId();
+    public Long create(Book book) {
+       entityManager.persist(book);
+       return book.getId();
     }
 
     @Override
-    public Book get(Long id) {
-        return entityManager.find(Book.class, id);
+    public Book read(Long id) {
+        return entityManager.find(Book.class,id);
     }
 
+    @Override
+    public Long update(Long id) {
+        return entityManager.;
+    }
 
+    @Override
+    public void delete(Long id) {
+
+
+        entityManager.remove(entityManager.find(Book.class,id));
+
+    }
 }
