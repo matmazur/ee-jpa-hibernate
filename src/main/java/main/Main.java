@@ -31,7 +31,7 @@ public class Main
 
         BookDao dao = new BookDaoImpl();
 
-        dao.save(new Book("r432432","About crown and glory","Mark Twain"));
+        dao.create(new Book("r432432","About crown and glory","Mark Twain"));
 
     }
 }

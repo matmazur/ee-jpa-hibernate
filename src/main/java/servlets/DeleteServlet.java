@@ -26,7 +26,6 @@ public class DeleteServlet extends HttpServlet {
         } catch (Exception ignored) {
             resp.sendRedirect("failure.jsp");
         }
-        resp.sendRedirect("failure.jsp");
     }
 }
 

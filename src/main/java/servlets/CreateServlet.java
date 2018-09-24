@@ -31,12 +31,14 @@ public class CreateServlet extends HttpServlet {
 
                 dao.create(book);
                 resp.sendRedirect("success.jsp");
+            } else {
+                resp.sendRedirect("failure.jsp");
             }
 
         } catch (Exception ignored) {
             resp.sendRedirect("failure.jsp");
         }
-        resp.sendRedirect("failure.jsp");
+
     }
 }
 

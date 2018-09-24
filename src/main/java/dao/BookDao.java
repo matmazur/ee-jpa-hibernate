@@ -7,7 +7,7 @@ public interface BookDao {
 
     Book read(Long id);
 
-    Long update(Long id);
+    Long update(Book book);
 
     void delete(Long id);
 

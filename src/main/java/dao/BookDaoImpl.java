@@ -16,25 +16,30 @@ public class BookDaoImpl implements BookDao {
     @Transactional
     @Override
     public Long create(Book book) {
-       entityManager.persist(book);
-       return book.getId();
+        entityManager.persist(book);
+        return book.getId();
     }
 
     @Override
     public Book read(Long id) {
-        return entityManager.find(Book.class,id);
+        return entityManager.find(Book.class, id);
     }
 
+    @Transactional
     @Override
-    public Long update(Long id) {
-        return entityManager.;
+    public Long update(Book book) {
+
+        entityManager.merge(book);
+
+        return book.getId();
     }
 
+    @Transactional
     @Override
     public void delete(Long id) {
 
-
-        entityManager.remove(entityManager.find(Book.class,id));
+        Book book = entityManager.find(Book.class, id);
+        entityManager.remove(book);
 
     }
 }
