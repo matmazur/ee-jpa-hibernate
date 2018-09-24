@@ -12,16 +12,16 @@ public class Book implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "book_id")
+    @Column(name = "book_id", nullable = false,unique = true)
     private Long id;
 
-    @Column(name = "book_isbn")
+    @Column(name = "book_isbn",nullable = false,length = 13)
     private String isbn;
 
-    @Column(name = "book_title")
+    @Column(name = "book_title",nullable = false)
     private String title;
 
-    @Column(name = "book_author")
+    @Column(name = "book_author",nullable = false)
     private String author;
 
     public Book() {
