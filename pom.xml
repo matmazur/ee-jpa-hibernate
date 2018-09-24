@@ -14,8 +14,8 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <dependencies>
             <dependency>
                 <groupId>org.jboss.spec</groupId>
-                <artifactId>jboss-javaee-8.0.0</artifactId>
-                <version>LATEST</version>
+                <artifactId>jboss-javaee-8.0</artifactId>
+                <version>1.0.1.Final</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

@@ -21,6 +21,7 @@ public class WriteServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html; charset=UTF-8");
         try {
             String isbn = req.getParameter("isbn");
             String title = req.getParameter("name");
