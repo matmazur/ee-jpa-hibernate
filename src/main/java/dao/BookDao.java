@@ -3,8 +3,12 @@ package dao;
 import model.Book;
 
 public interface BookDao {
-    public Long save(Book book);
+    Long create(Book book);
 
-    public Book get(Long id);
+    Book read(Long id);
+
+    Book update(Long id);
+
+    Long delete(Long id);
 
 }

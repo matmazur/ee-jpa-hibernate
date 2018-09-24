@@ -11,13 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
-@WebServlet("/write")
-public class WriteServlet extends HttpServlet {
+@WebServlet("/create")
+public class CreateServlet extends HttpServlet {
 
     @Inject
     BookDao dao;
-
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

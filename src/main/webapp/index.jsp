@@ -2,7 +2,7 @@
 <body>
 <h2>Book Manager</h2>
 <h1>CREATE BOOK</h1>
-<form action="/write" method="POST">
+<form action="/create" method="POST">
     <input type="text" name="isbn" placeholder="ISBN"/><br/>
     <input type="text" name="name" placeholder="Name"/><br/>
     <input type="text" name="author" placeholder="Author"/><br/>
