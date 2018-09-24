@@ -24,6 +24,25 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 
     <dependencies>
+        <!-- PROVIDED GROUP-->
+
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.spec.javax.servlet</groupId>
+            <artifactId>jboss-servlet-api_4.0_spec</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+
         <!-- Hibernate -->
         <dependency>
             <groupId>org.hibernate</groupId>
