@@ -3,18 +3,19 @@ package model;
 import javax.persistence.*;
 import java.util.Objects;
 
-@Entity (name = "book_details")
+@Entity
+@Table(name = "book_details")
 public class BookDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column (name = "book_details_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "book_details_id")
     private Long id;
-    @Column (name = "description")
+    @Column(name = "description")
     private String description;
-    @Column (name = "price")
+    @Column(name = "price")
     private Double price;
-    @Column (name = "year")
+    @Column(name = "year")
     private Integer year;
 
     public BookDetails(String description, Double price, Integer year) {

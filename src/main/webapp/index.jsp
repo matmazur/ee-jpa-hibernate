@@ -6,12 +6,9 @@
     <input type="text" name="isbn" placeholder="ISBN"/><br/>
     <input type="text" name="name" placeholder="Name"/><br/>
     <input type="text" name="author" placeholder="Author"/><br/>
-
-
-
-    <input type="text" name="category" placeholder="Category"/><br/>
-
-
+    <input type="text" name="description" placeholder="Description"/><br/>
+    <input type="text" name="price" placeholder="Price"/><br/>
+    <input type="text" name="year" placeholder="Year"/><br/>
 
     <input type="submit" value="Save"/>
 </form>

@@ -11,18 +11,22 @@ public class Book implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "book_id", nullable = false,unique = true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "book_id", nullable = false, unique = true)
     private Long id;
 
-    @Column(name = "book_isbn",nullable = false,length = 13, unique = true )
+    @Column(name = "book_isbn", nullable = false, length = 13, unique = true)
     private String isbn;
 
-    @Column(name = "book_title",nullable = false)
+    @Column(name = "book_title", nullable = false)
     private String title;
 
-    @Column(name = "book_author",nullable = false)
+    @Column(name = "book_author", nullable = false)
     private String author;
+
+    @OneToOne
+    @JoinColumn(name = "id_book_details")
+    private BookDetails bookDetails;
 
     public Book() {
     }
@@ -40,6 +44,7 @@ public class Book implements Serializable {
                 ", isbn='" + isbn + '\'' +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
+                ", bookDetails=" + bookDetails +
                 '}';
     }
 
@@ -51,13 +56,21 @@ public class Book implements Serializable {
         return Objects.equals(id, book.id) &&
                 Objects.equals(isbn, book.isbn) &&
                 Objects.equals(title, book.title) &&
-                Objects.equals(author, book.author);
+                Objects.equals(author, book.author) &&
+                Objects.equals(bookDetails, book.bookDetails);
     }
 
     @Override
     public int hashCode() {
+        return Objects.hash(id, isbn, title, author, bookDetails);
+    }
 
-        return Objects.hash(id, isbn, title, author);
+    public BookDetails getBookDetails() {
+        return bookDetails;
+    }
+
+    public void setBookDetails(BookDetails bookDetails) {
+        this.bookDetails = bookDetails;
     }
 
     public Long getId() {
