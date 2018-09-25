@@ -57,14 +57,14 @@ public class Order implements Serializable {
         this.user = user;
     }
 
-    
+
     @Override
     public String toString() {
         return "Order{" +
                 "id=" + id +
                 ", products=" + product +
                 ", orderDetails='" + orderDetails + '\'' +
-                ", user=" +
+                ", user=" + user.getId()+
                 '}';
     }
 }
