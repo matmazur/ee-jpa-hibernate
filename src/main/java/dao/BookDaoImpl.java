@@ -29,8 +29,12 @@ public class BookDaoImpl implements BookDao {
     @Override
     public Long update(Book book) {
 
+//        Book bookFromDB = entityManager.find(Book.class, book.getId());
+//        bookFromDB.setTitle(book.getTitle());
+//        bookFromDB.setIsbn(book.getIsbn());
+//        bookFromDB.setAuthor(book.getAuthor());
+        
         entityManager.merge(book);
-
         return book.getId();
     }
 
