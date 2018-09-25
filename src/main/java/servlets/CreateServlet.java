@@ -33,7 +33,7 @@ public class CreateServlet extends HttpServlet {
             Integer year = Integer.valueOf(req.getParameter("year"));
 
 
-            if (!(isbn.trim().isEmpty() || title.trim().isEmpty() || author.trim().isEmpty())) {
+            if (isNotEmptyOrNull(isbn, title, author,description, price,year)) {
 
                 Book book = new Book(isbn, title, author);
                 BookDetails details  = new BookDetails(description,price,year);
@@ -50,5 +50,14 @@ public class CreateServlet extends HttpServlet {
             resp.sendRedirect("failure.jsp");
         }
 
+    }
+
+    private boolean isNotEmptyOrNull(String isbn, String title, String author, String description, Double price, Integer year) {
+        return !(isbn.trim().isEmpty() ||
+                title.trim().isEmpty() ||
+                author.trim().isEmpty())||
+                description.trim().isEmpty()||
+                price==null||
+                year==null;
     }
 }

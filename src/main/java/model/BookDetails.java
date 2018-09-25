@@ -1,6 +1,7 @@
 package model;
 
 import javax.persistence.*;
+import javax.xml.registry.infomodel.User;
 import java.util.Objects;
 
 @Entity
@@ -17,6 +18,8 @@ public class BookDetails {
     private Double price;
     @Column(name = "year")
     private Integer year;
+    @OneToOne(mappedBy = "bookDetails")
+    private Book book;
 
     public BookDetails(String description, Double price, Integer year) {
         this.description = description;
@@ -83,5 +86,13 @@ public class BookDetails {
 
     public void setYear(Integer year) {
         this.year = year;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
     }
 }

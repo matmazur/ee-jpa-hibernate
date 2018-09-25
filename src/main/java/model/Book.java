@@ -24,7 +24,7 @@ public class Book implements Serializable {
     @Column(name = "book_author", nullable = false)
     private String author;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_book_details")
     private BookDetails bookDetails;
 
