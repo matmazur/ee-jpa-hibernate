@@ -1,12 +1,12 @@
 package dao;
 
 
-import javax.xml.registry.infomodel.User;
+import model.User;
 
 public interface UserDao {
     Long create(User user);
 
-    User read(Long id);
+    model.User read(Long id);
 
     Long update(User user);
 

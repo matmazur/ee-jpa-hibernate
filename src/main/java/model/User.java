@@ -1,6 +1,7 @@
 package model;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -9,11 +10,18 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column("id_user")
     private Long id;
+    @Column("name")
     private String name;
+    @Column("surname")
     private String surname;
+    @Column("address")
     private String address;
 
+    @OneToMany
+    @JoinColumn(name = "client_id", referencedColumnName="id_client")
+    private List<Order> orders;
 
     @Override
     public String toString() {
