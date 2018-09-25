@@ -1,27 +1,30 @@
 package model;
 
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "users")
+public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column("id_user")
+    @Column(name = "id_user")
     private Long id;
-    @Column("name")
+    @Column(name="name", nullable=false)
     private String name;
-    @Column("surname")
+    @Column(name="surname", nullable=false)
     private String surname;
-    @Column("address")
+    @Column(nullable = false)
     private String address;
-
     @OneToMany
-    @JoinColumn(name = "client_id", referencedColumnName="id_client")
+    @JoinColumn(name = "user_id", referencedColumnName="id_user")
     private List<Order> orders;
+
 
     @Override
     public String toString() {

@@ -1,15 +1,17 @@
 package dao;
 
-import javax.ejb.Stateless;
-import javax.inject.Inject;
+import javax.enterprise.context.RequestScoped;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import model.User;
 
-@Stateless
+@RequestScoped
 public class UserDaoImpl implements UserDao {
 
-    @Inject
-    EntityManager entityManager;
+    @PersistenceContext(name = "bookPersistence")
+    private EntityManager entityManager;
+
 
     @Override
     public Long create(User user) {
@@ -19,7 +21,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User read(Long id) {
-        return entityManager.find(User.class,id);
+        return entityManager.find(User.class, id);
     }
 
     @Override
@@ -33,6 +35,6 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void delete(Long id) {
 
-        entityManager.remove(entityManager.find(User.class,id));
+        entityManager.remove(entityManager.find(User.class, id));
     }
 }

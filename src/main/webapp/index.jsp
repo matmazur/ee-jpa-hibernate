@@ -1,40 +1,43 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
+<head>
+    <meta charset="UTF-8">
+</head>
 <body>
-<h2>Book Manager</h2>
-<h1>CREATE BOOK</h1>
-<form action="${pageContext.request.contextPath}/create" method="POST">
-    <input type="text" name="isbn" placeholder="ISBN"/><br/>
-    <input type="text" name="name" placeholder="Name"/><br/>
-    <input type="text" name="author" placeholder="Author"/><br/>
-    <input type="text" name="description" placeholder="Description"/><br/>
-    <input type="text" name="price" placeholder="Price"/><br/>
-    <input type="text" name="year" placeholder="Year"/><br/>
+<h2>Order manager</h2>
 
-    <input type="submit" value="Save"/>
-</form>
-<br>
-<h1>UPDATE BOOK</h1>
-<form action="${pageContext.request.contextPath}/update" method="POST">
-    <input type="text" name="id" placeholder="BookID"><br/>
-    <input type="text" name="isbn" placeholder="ISBN"/><br/>
-    <input type="text" name="name" placeholder="Name"/><br/>
-    <input type="text" name="author" placeholder="Author"/><br/>
-    <input type="text" name="description" placeholder="Description"/><br/>
-    <input type="text" name="price" placeholder="Price"/><br/>
-    <input type="text" name="year" placeholder="Year"/><br/>
-    <input type="submit" value="Save"/>
-</form>
-<br>
-<h1>FIND BOOK BY ID</h1>
-<form action="${pageContext.request.contextPath}/read" method="GET">
-    <input type="number" name="id" placeholder="BookID"/><br/>
-    <input type="submit" value="Get"/>
-</form>
-<h1>DELETE BOOK BY ID</h1>
-<form action="${pageContext.request.contextPath}/delete" method="GET">
-    <input type="number" name="id" placeholder="BookID"/><br/>
-    <input type="submit" value="Delete"/>
+<h3>Add client</h3>
+<form action="addclient" method="post" id="addform">
+    <input type="text" name="firstName" placeholder="Client first name" />
+    <br />
+    <input type="text" name="lastName" placeholder="Client last name" />
+    <br />
+    <input type="text" name="address" placeholder="Address" />
+    <br />
+    <input type="submit" value="Add Client" />
 </form>
 
+<h3>Add order</h3>
+<form action="addorder" method="post">
+    <input type="number" name="clientId" placeholder="Client ID" />
+    <br />
+    <input type="text" name="productName" placeholder="Product name" />
+    <br />
+    <input type="text" name="orderDetails" placeholder="Details" />
+    <br />
+    <input type="submit" value="Add Order" />
+</form>
+
+<h3>Get client</h3>
+<form action="getclient" method="post" id="addform">
+    <input type="number" name="clientId" placeholder="Client ID" />
+    <input type="submit" value="Get Client" />
+</form>
+
+<h3>Get order</h3>
+<form action="getorder" method="post" id="addform">
+    <input type="number" name="orderId" placeholder="Order ID" />
+    <input type="submit" value="Get Order" />
+</form>
 </body>
 </html>
