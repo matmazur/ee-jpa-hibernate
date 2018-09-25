@@ -28,18 +28,12 @@ public class CreateServlet extends HttpServlet {
             String isbn = req.getParameter("isbn");
             String title = req.getParameter("name");
             String author = req.getParameter("author");
-            String description = req.getParameter("description");
-            Double price = Double.valueOf(req.getParameter("price"));
-            Integer year = Integer.valueOf(req.getParameter("year"));
-
 
             if (!(isbn.trim().isEmpty() || title.trim().isEmpty() || author.trim().isEmpty())) {
 
                 Book book = new Book(isbn, title, author);
-                BookDetails details  = new BookDetails(description,price,year);
 
                 dao.create(book);
-                detailsDAO.create(details);
                 resp.sendRedirect("success.jsp");
             } else {
                 resp.sendRedirect("failure.jsp");
