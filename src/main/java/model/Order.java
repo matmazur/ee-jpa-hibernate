@@ -16,6 +16,10 @@ public class Order implements Serializable {
     private String product;
     @Column(name = "details", length = 512)
     private String orderDetails;
+    @ManyToOne
+    @JoinColumn (name = "user_id" )
+    private User user;
+
 
     public Long getId() {
         return id;
@@ -45,6 +49,15 @@ public class Order implements Serializable {
         this.orderDetails = orderDetails;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    
     @Override
     public String toString() {
         return "Order{" +

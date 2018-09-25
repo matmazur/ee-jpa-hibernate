@@ -15,14 +15,13 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user")
     private Long id;
-    @Column(name="name", nullable=false)
+    @Column(name = "name", nullable = false)
     private String name;
-    @Column(name="surname", nullable=false)
+    @Column(name = "surname", nullable = false)
     private String surname;
     @Column(nullable = false)
     private String address;
-    @OneToMany
-    @JoinColumn(name = "user_id", referencedColumnName="id_user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<Order> orders;
 
 
@@ -33,6 +32,7 @@ public class User implements Serializable {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", address='" + address + '\'' +
+                ", orders=" + orders +
                 '}';
     }
 
@@ -82,5 +82,13 @@ public class User implements Serializable {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 }

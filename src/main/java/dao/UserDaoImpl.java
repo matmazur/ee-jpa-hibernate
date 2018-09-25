@@ -1,12 +1,13 @@
 package dao;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import model.User;
 
-@RequestScoped
+@Stateless
 public class UserDaoImpl implements UserDao {
 
     @PersistenceContext(name = "bookPersistence")

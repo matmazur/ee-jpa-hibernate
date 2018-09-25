@@ -9,10 +9,8 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class OrderDAOImpl implements OrderDAO{
 
-
     @PersistenceContext(name = "bookPersistence")
     private EntityManager entityManager;
-
 
     @Override
     public Long create(Order order) {
