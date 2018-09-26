@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.stream.Collectors;
 
 @WebServlet("/get-client")
 public class GetClient extends HttpServlet {
@@ -24,6 +25,6 @@ public class GetClient extends HttpServlet {
 
         User user = dao.read(id);
 
-        resp.getWriter().println(user);
+        resp.getWriter().println(user  + " " + user.getOrders().stream().distinct().collect(Collectors.toList()));
     }
 }

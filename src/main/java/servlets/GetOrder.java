@@ -25,6 +25,6 @@ public class GetOrder extends HttpServlet {
 
         Order order = dao.read(id);
 
-        resp.getWriter().println(order);
+        resp.getWriter().println(order + "\nClient Id = " + order.getUser().getId());
     }
 }

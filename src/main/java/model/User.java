@@ -32,7 +32,6 @@ public class User implements Serializable {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", address='" + address + '\'' +
-                ", orders=" + orders +
                 '}';
     }
 

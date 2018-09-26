@@ -63,9 +63,8 @@ public class Order implements Serializable {
 
     @Override
     public String toString() {
-        return "Order id = " + id+"\n"+
-                "User id = " + user.getId()+"\n"+
-                "Order details: " + orderDetails +"\n"+
-                "Products: "+ products+"";
+        return "\nOrder id = " + id + "\n" +
+                "Order details: " + orderDetails + "\n" +
+                "Products: " + products + "";
     }
 }
