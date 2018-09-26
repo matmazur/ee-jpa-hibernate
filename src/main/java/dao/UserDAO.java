@@ -1,9 +1,9 @@
 package dao;
 
-
 import model.User;
 
 public interface UserDAO {
+
     Long create(User user);
 
     model.User read(Long id);

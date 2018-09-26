@@ -27,6 +27,5 @@ public class GetProduct extends HttpServlet {
         Product product = dao.read(id);
 
         resp.getWriter().println(product);
-
     }
 }

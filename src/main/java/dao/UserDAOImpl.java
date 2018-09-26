@@ -12,7 +12,6 @@ public class UserDAOImpl implements UserDAO {
     @PersistenceContext(name = "storePersistence")
     private EntityManager entityManager;
 
-
     @Override
     public Long create(User user) {
         entityManager.persist(user);

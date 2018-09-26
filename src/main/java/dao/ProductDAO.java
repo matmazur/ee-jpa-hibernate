@@ -4,7 +4,6 @@ import model.Product;
 
 public interface ProductDAO {
 
-
     Long create(Product product);
 
     Product read(Long id);

@@ -21,10 +21,8 @@ public class AddProductOrder extends HttpServlet {
     @Inject
     ProductDAO productDAO;
 
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 
         Long orderId = Long.valueOf(req.getParameter("orderId"));
         Long productId = Long.valueOf(req.getParameter("productId"));
@@ -32,11 +30,8 @@ public class AddProductOrder extends HttpServlet {
         Order order = orderDAO.read(orderId);
         Product product = productDAO.read(productId);
 
-
         order.getProducts().add(product);
 
         resp.sendRedirect(getServletContext().getContextPath());
-
-
     }
 }

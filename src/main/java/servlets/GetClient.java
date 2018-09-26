@@ -25,6 +25,5 @@ public class GetClient extends HttpServlet {
         User user = dao.read(id);
 
         resp.getWriter().println(user);
-
     }
 }

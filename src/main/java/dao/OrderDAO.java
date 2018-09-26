@@ -4,12 +4,12 @@ import model.Order;
 
 public interface OrderDAO {
 
-        Long create(Order order);
+    Long create(Order order);
 
-        Order read(Long id);
+    Order read(Long id);
 
-        Long update(Order order);
+    Long update(Order order);
 
-        void delete(Long id);
+    void delete(Long id);
 
-    }
+}
