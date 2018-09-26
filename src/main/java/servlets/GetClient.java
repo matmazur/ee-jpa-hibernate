@@ -1,6 +1,6 @@
 package servlets;
 
-import dao.UserDao;
+import dao.UserDAO;
 import model.User;
 
 import javax.inject.Inject;
@@ -15,7 +15,7 @@ import java.io.IOException;
 public class GetClient extends HttpServlet {
 
     @Inject
-    UserDao dao;
+    UserDAO dao;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

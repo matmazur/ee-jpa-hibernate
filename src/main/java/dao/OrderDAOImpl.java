@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class OrderDAOImpl implements OrderDAO{
 
-    @PersistenceContext(name = "bookPersistence")
+    @PersistenceContext(name = "storePersistence")
     private EntityManager entityManager;
 
     @Override

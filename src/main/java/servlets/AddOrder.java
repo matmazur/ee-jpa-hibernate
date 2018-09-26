@@ -1,8 +1,7 @@
 package servlets;
 
 import dao.OrderDAO;
-import dao.UserDao;
-import dao.UserDaoImpl;
+import dao.UserDAO;
 import model.Order;
 
 import javax.inject.Inject;
@@ -19,7 +18,7 @@ public class AddOrder extends HttpServlet {
     @Inject
     OrderDAO dao;
     @Inject
-    UserDao userDao;
+    UserDAO userDao;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

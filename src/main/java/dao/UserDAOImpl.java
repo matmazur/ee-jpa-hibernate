@@ -1,16 +1,15 @@
 package dao;
 
 import javax.ejb.Stateless;
-import javax.enterprise.context.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import model.User;
 
 @Stateless
-public class UserDaoImpl implements UserDao {
+public class UserDAOImpl implements UserDAO {
 
-    @PersistenceContext(name = "bookPersistence")
+    @PersistenceContext(name = "storePersistence")
     private EntityManager entityManager;
 
 
