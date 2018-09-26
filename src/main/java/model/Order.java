@@ -9,15 +9,15 @@ public class Order implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="id_order")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_order")
     private Long id;
     @Column(nullable = false)
     private String product;
     @Column(name = "details", length = 512)
     private String orderDetails;
     @ManyToOne
-    @JoinColumn (name = "user_id" )
+    @JoinColumn(name = "user_id")
     private User user;
 
 
@@ -63,8 +63,7 @@ public class Order implements Serializable {
         return "Order{" +
                 "id=" + id +
                 ", products=" + product +
-                ", orderDetails='" + orderDetails + '\'' +
-                ", user=" + user.getId()+
+                ", orderDetails='" + orderDetails +
                 '}';
     }
 }
