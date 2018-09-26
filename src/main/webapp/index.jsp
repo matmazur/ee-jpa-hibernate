@@ -7,7 +7,7 @@
 <h2>Order manager</h2>
 
 <h3>Add client</h3>
-<form action="addclient" method="post">
+<form action="/add-client" method="post">
     <input type="text" name="firstName" placeholder="Client first name" />
     <br />
     <input type="text" name="lastName" placeholder="Client last name" />
@@ -18,7 +18,7 @@
 </form>
 
 <h3>Add order</h3>
-<form action="addorder" method="post">
+<form action="/add-order" method="post">
     <input type="number" name="clientId" placeholder="Client ID" />
     <br />
     <input type="text" name="orderDetails" placeholder="Details" />
@@ -27,7 +27,7 @@
 </form>
 
 <h3>Add product</h3>
-<form action="addproduct" method="post">
+<form action="/add-product" method="post">
     <input type="text" name="productName" placeholder="Product name" />
     <br />
     <input type="text" name="productPrice" placeholder="Product price" />
@@ -38,7 +38,7 @@
 </form>
 
 <h3>Add product to order</h3>
-<form action="addproduct-order" method="post">
+<form action="/add-product-order" method="post">
     <input type="number" name="orderId" placeholder="Order ID" />
     <br />
     <input type="number" name="productId" placeholder="Product ID" />
@@ -47,19 +47,19 @@
 </form>
 
 <h3>Get client</h3>
-<form action="getclient" method="post">
+<form action="/get-client" method="post">
     <input type="number" name="clientId" placeholder="Client ID" />
     <input type="submit" value="Get Client" />
 </form>
 
 <h3>Get order</h3>
-<form action="getorder" method="post">
+<form action="/get-order" method="post">
     <input type="number" name="orderId" placeholder="Order ID" />
     <input type="submit" value="Get Order" />
 </form>
 
 <h3>Get Product</h3>
-<form action="getproduct" method="post">
+<form action="/get-product" method="post">
     <input type="number" name="productId" placeholder="Product ID" />
     <input type="submit" value="Get Product" />
 </form>
