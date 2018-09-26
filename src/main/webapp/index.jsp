@@ -47,19 +47,19 @@
 </form>
 
 <h3>Get client</h3>
-<form action="/get-client" method="post">
+<form action="/get-client" method="get">
     <input type="number" name="clientId" placeholder="Client ID" />
     <input type="submit" value="Get Client" />
 </form>
 
 <h3>Get order</h3>
-<form action="/get-order" method="post">
+<form action="/get-order" method="get">
     <input type="number" name="orderId" placeholder="Order ID" />
     <input type="submit" value="Get Order" />
 </form>
 
 <h3>Get Product</h3>
-<form action="/get-product" method="post">
+<form action="/get-product" method="get">
     <input type="number" name="productId" placeholder="Product ID" />
     <input type="submit" value="Get Product" />
 </form>

@@ -32,6 +32,7 @@ public class AddProductOrder extends HttpServlet {
 
         order.getProducts().add(product);
 
+        orderDAO.update(order);
         resp.sendRedirect(getServletContext().getContextPath());
     }
 }

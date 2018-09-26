@@ -19,7 +19,7 @@ public class Product implements Serializable {
     private Double price;
     @Column(name = "details")
     private String details;
-    @ManyToMany(mappedBy = "products")
+    @ManyToMany(mappedBy = "products",fetch = FetchType.EAGER)
     private List<Order> orders;
 
     public List<Order> getOrders() {
