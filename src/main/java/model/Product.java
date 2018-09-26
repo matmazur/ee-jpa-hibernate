@@ -2,6 +2,7 @@ package model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "product")
@@ -18,6 +19,15 @@ public class Product implements Serializable {
     private Double price;
     @Column(name = "details")
     private String details;
+    @ManyToMany(mappedBy = "products")
+    private List<Order> orders;
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
     public Long getId() {
         return id;
     }
@@ -42,6 +52,7 @@ public class Product implements Serializable {
     public void setDetails(String details) {
         this.details = details;
     }
+
     @Override
     public String toString() {
         return "Product [id=" + id + ", name=" + name

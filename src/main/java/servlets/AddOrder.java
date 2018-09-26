@@ -30,7 +30,6 @@ public class AddOrder extends HttpServlet {
 
         Order order = new Order();
         order.setOrderDetails(orderDetails);
-        order.setProduct(productName);
         order.setUser(userDao.read(clientId));
 
         dao.create(order);
