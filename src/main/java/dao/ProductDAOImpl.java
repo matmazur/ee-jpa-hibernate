@@ -2,9 +2,11 @@ package dao;
 
 import model.Product;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+@Stateless
 public class ProductDAOImpl implements ProductDAO {
 
     @PersistenceContext(name = "storePersistence")

@@ -17,20 +17,23 @@ public class AddOrder extends HttpServlet {
 
     @Inject
     OrderDAO dao;
+
     @Inject
     UserDAO userDao;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        Order order = new Order();
+
         Long clientId = Long.valueOf(req.getParameter("clientId"));
-        String productName = req.getParameter("productName");
         String orderDetails = req.getParameter("orderDetails");
 
-        Order order = new Order();
         order.setOrderDetails(orderDetails);
         order.setUser(userDao.read(clientId));
 
         dao.create(order);
+
+        resp.sendRedirect(getServletContext().getContextPath());
     }
 }

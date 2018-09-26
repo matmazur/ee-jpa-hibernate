@@ -20,17 +20,19 @@ public class AddClient extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        User user = new User();
+
         String name = req.getParameter("firstName");
         String surname = req.getParameter("lastName");
         String address = req.getParameter("address");
 
-
-        User user = new User();
         user.setAddress(address);
         user.setName(name);
         user.setSurname(surname);
 
         dao.create(user);
+
+        resp.sendRedirect(getServletContext().getContextPath());
 
     }
 }
