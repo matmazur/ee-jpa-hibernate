@@ -3,15 +3,19 @@ package Main;
 import dao.BookDao;
 import dao.BookDaoImpl;
 import model.Book;
+import model.City;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
 
-public class Main
-{
+public class Main {
     public static void main(String[] args) {
-
 
 
         String jdbcUrl = "jdbc:mysql://localhost:3306/test?useSSL=false";
@@ -28,11 +32,15 @@ public class Main
         }
 // THIS ABOVE WORKS CORRECLTY  -  CONNECTION TO THE DB IS PROPER
 
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("worldUnit");
+        EntityManager entity = factory.createEntityManager();
 
-        BookDao dao = new BookDaoImpl();
 
-        dao.save(new Book("r432432","Julia crown and glory","Mark Twain"));
-        dao.close();
+        Query query = entity.createQuery("SELECT c FROM City c");
+        List<City> cities = query.getResultList();
+        System.out.println(cities.get(0));
+        City city = entity.find(City.class,1L);
+        System.out.println(city);
 
     }
 }
