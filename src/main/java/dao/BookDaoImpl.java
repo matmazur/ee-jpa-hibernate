@@ -12,7 +12,7 @@ public class BookDaoImpl implements BookDao {
     private EntityManager entity;
 
     public BookDaoImpl() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("bookPersistence");
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("mainUnit");
         entity = factory.createEntityManager();
     }
 
