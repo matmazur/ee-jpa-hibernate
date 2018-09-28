@@ -21,11 +21,11 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="product" items="${requestScope.books}">
+            <c:forEach var="book" items="${requestScope.books}">
                 <tr>
-                    <td>${product.id }</td>
-                    <td>${product.name }</td>
-                    <td>${product.price }</td>
+                    <td>${book.id }</td>
+                    <td>${book.title }</td>
+                    <td>${book.author }</td>
                 </tr>
             </c:forEach>
             </tbody>

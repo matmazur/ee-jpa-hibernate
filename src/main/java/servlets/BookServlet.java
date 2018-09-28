@@ -5,6 +5,7 @@ import model.Book;
 
 import javax.inject.Inject;
 import javax.management.Query;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -44,7 +45,13 @@ public class BookServlet extends HttpServlet {
             for(Book b:books) {
                 resp.getWriter().println(b);
             }
+            req.setAttribute("query", query);
+            req.setAttribute("books", books);
 
+            RequestDispatcher dispatcher = req.getRequestDispatcher("result.jsp");
+            dispatcher.forward(req,resp);
         }
+
+
     }
 }
