@@ -6,6 +6,11 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "book")
+@NamedQueries({
+        @NamedQuery(name = "Book.findAll", query = "SELECT b FROM Book b"),
+        @NamedQuery(name = "Product.findAllOrderByAuthor", query = "SELECT b FROM Book b ORDER BY b.author")
+
+})
 public class Book implements Serializable {
 
     private static final long serialVersionUID = 1L;
