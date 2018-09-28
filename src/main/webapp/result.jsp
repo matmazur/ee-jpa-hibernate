@@ -7,7 +7,7 @@
     <title></title>
 </head>
 <body>
-<a href="${pageContext.request.contextPath}">Homepage</a>
+<a href="/">Homepage</a>
 <h3>Query: <c:out value="${requestScope.query}" /></h3>
 
 <c:choose>
