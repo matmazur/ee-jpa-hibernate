@@ -63,5 +63,21 @@
     <input type="number" name="productId" placeholder="Product ID" />
     <input type="submit" value="Get Product" />
 </form>
+
+
+<br><br><br>
+
+<h2>Add product</h2>
+<form action="/book?add=form" method="post">
+    <input type="text" name="isbn" placeholder="Isbn" />
+    <input type="text" name="title"  placeholder="Title" />
+    <input type="text" name="author" placeholder="Author" />
+    <input type="submit" value="Add" />
+</form>
+
+<form action="/book?add=form" method="post">
+    <input type="text" name="query" placeholder="JPQL Query" style="width: 500px" />
+    <input type="submit" value="Get" />
+</form>
 </body>
 </html>
