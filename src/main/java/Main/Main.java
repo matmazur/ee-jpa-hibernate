@@ -12,6 +12,7 @@ import javax.persistence.Query;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -36,9 +37,11 @@ public class Main {
         EntityManager entity = factory.createEntityManager();
 
 
-        Query query = entity.createQuery("SELECT c FROM City c");
+        Query query = entity.createQuery("SELECT c FROM City c where c.countryCode='POL'");
         List<City> cities = query.getResultList();
-        System.out.println(cities.get(0));
+        for(City c:cities){
+            System.out.println(c);
+        }
         City city = entity.find(City.class,1L);
         System.out.println(city);
 
