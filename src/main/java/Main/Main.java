@@ -5,10 +5,7 @@ import dao.BookDaoImpl;
 import model.Book;
 import model.City;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
+import javax.persistence.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -36,14 +33,33 @@ public class Main {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("worldUnit");
         EntityManager entity = factory.createEntityManager();
 
+// FACTORY AND ENTITY CREATED - DON'T TOUCH
 
-        Query query = entity.createQuery("SELECT c FROM City c where c.countryCode='POL'");
+        TypedQuery<City> query = entity.createQuery("SELECT c FROM City c where c.countryCode='POL'", City.class);
         List<City> cities = query.getResultList();
-        for(City c:cities){
+        for (City c : cities) {
             System.out.println(c);
         }
-        City city = entity.find(City.class,1L);
-        System.out.println(city);
+
+
+        Query queryDelete = entity.createQuery("DELETE FROM City c WHERE c.countryCode='BOL'");
+        entity.getTransaction().begin();
+        queryDelete.executeUpdate();
+        entity.getTransaction().commit();
+
+        Query queryAddPopulation = entity.createQuery("UPDATE City c SET c.population=c.population+1000 where c.countryCode='POL'");
+        entity.getTransaction().begin();
+        queryAddPopulation.executeUpdate();
+        entity.getTransaction().commit();
+
+        query = entity.createQuery("SELECT c FROM City c where c.countryCode='POL'", City.class);
+        cities = query.getResultList();
+        for (City c : cities) {
+            System.out.println(c);
+        }
+
+        Query query2 = entity.createQuery("SELECT c FROM City c where c.id=1");
+        System.out.println(query2.getSingleResult());
 
     }
 }
