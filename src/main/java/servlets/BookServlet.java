@@ -38,6 +38,9 @@ public class BookServlet extends HttpServlet {
 
     private void commitQuery(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String query = req.getParameter("query");
+        if (query.trim().isEmpty()){
+            List<Book> books = dao.findAll();
+        }
         List<Book> books = dao.doQuery(query);
 
         req.setAttribute("query", query);

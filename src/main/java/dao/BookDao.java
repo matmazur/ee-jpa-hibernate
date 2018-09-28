@@ -10,5 +10,8 @@ public interface BookDao {
 
     public void close();
 
+    public List findAll();
+    public List<Book> findAllOrderedByAuthor();
+
     public List<Book> doQuery(String query);
 }

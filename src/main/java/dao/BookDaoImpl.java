@@ -30,6 +30,16 @@ public class BookDaoImpl implements BookDao {
     }
 
     @Override
+    public List<Book> findAll() {
+        return entity.createNamedQuery("Book.findAll").getResultList();
+    }
+
+    @Override
+    public List<Book> findAllOrderedByAuthor() {
+        return entity.createNamedQuery("Book.findAllOrderByAuthor").getResultList();
+    }
+
+    @Override
     public List<Book> doQuery(String query) {
         TypedQuery<Book> actualQuery = entity.createQuery(query, Book.class);
         return actualQuery.getResultList();

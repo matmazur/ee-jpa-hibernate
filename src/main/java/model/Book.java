@@ -8,7 +8,7 @@ import java.util.Objects;
 @Table(name = "book")
 @NamedQueries({
         @NamedQuery(name = "Book.findAll", query = "SELECT b FROM Book b"),
-        @NamedQuery(name = "Product.findAllOrderByAuthor", query = "SELECT b FROM Book b ORDER BY b.author")
+        @NamedQuery(name = "Book.findAllOrderByAuthor", query = "SELECT b FROM Book b ORDER BY b.author")
 
 })
 public class Book implements Serializable {
