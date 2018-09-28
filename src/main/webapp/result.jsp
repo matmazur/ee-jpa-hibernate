@@ -11,23 +11,21 @@
 <h3>Query: <c:out value="${requestScope.query}" /></h3>
 
 <c:choose>
-    <c:when test="${not empty requestScope.products }">
+    <c:when test="${not empty requestScope.books }">
         <table border="1">
             <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Category</th>
+                <th>Title</th>
+                <th>Author</th>
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="product" items="${requestScope.products}">
+            <c:forEach var="product" items="${requestScope.books}">
                 <tr>
                     <td>${product.id }</td>
                     <td>${product.name }</td>
                     <td>${product.price }</td>
-                    <td>${product.category }</td>
                 </tr>
             </c:forEach>
             </tbody>
