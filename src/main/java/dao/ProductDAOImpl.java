@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class ProductDAOImpl implements ProductDAO {
 
-    @PersistenceContext(name = "storePersistence")
+    @PersistenceContext(unitName  = "storePersistence")
     EntityManager entityManager;
 
     @Override

@@ -9,7 +9,7 @@ import model.User;
 @Stateless
 public class UserDAOImpl implements UserDAO {
 
-    @PersistenceContext(name = "storePersistence")
+    @PersistenceContext(unitName = "storePersistence")
     private EntityManager entityManager;
 
     @Override

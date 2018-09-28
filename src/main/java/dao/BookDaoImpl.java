@@ -2,40 +2,36 @@ package dao;
 
 import model.Book;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
 import javax.persistence.*;
+import javax.transaction.Transactional;
+import java.util.List;
 
-@RequestScoped
+@Stateless
 public class BookDaoImpl implements BookDao {
 
-
+    @PersistenceContext(unitName = "storePersistence")
     private EntityManager entity;
-
-    public BookDaoImpl() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("mainUnit");
-        entity = factory.createEntityManager();
-    }
 
     @Override
     public void save(Book book) {
-
-        entity.getTransaction().begin();
         entity.persist(book);
-        entity.getTransaction().commit();
     }
 
     @Override
     public Book get(Long id) {
-
-
         return entity.find(Book.class, id);
     }
 
-
     @Override
-    public void close(){
+    public void close() {
         entity.close();
     }
 
-
+    @Override
+    public List<Book> doQuery(String query) {
+        TypedQuery<Book> actualQuery = entity.createQuery(query, Book.class);
+        return actualQuery.getResultList();
+    }
 }

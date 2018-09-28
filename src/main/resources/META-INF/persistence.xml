@@ -14,38 +14,31 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
         </properties>
     </persistence-unit>
 
-    <persistence-unit transaction-type="RESOURCE_LOCAL" name="mainUnit">
-
-        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-
-        <properties>
-
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/test?useSSL=false"/>
-            <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="pass"/>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.format_sql" value="true"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
-            <!-- Configuring Connection Pool -->
-
-            <property name="hibernate.c3p0.min_size" value="5"/>
-            <property name="hibernate.c3p0.max_size" value="20"/>
-            <property name="hibernate.c3p0.timeout" value="500"/>
-            <property name="hibernate.c3p0.max_statements" value="50"/>
-            <property name="hibernate.c3p0.idle_test_period" value="2000"/>
-
-        </properties>
-
-    </persistence-unit>
+    <!--<persistence-unit transaction-type="RESOURCE_LOCAL" name="mainUnit">-->
+        <!--<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
+        <!--<properties>-->
+            <!--<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/test?useSSL=false"/>-->
+            <!--<property name="javax.persistence.jdbc.user" value="root"/>-->
+            <!--<property name="javax.persistence.jdbc.password" value="pass"/>-->
+            <!--<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>-->
+            <!--<property name="hibernate.show_sql" value="true"/>-->
+            <!--<property name="hibernate.format_sql" value="true"/>-->
+            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>-->
+            <!--<property name="hibernate.hbm2ddl.auto" value="create"/>-->
+            <!--&lt;!&ndash; Configuring Connection Pool &ndash;&gt;-->
+            <!--<property name="hibernate.c3p0.min_size" value="5"/>-->
+            <!--<property name="hibernate.c3p0.max_size" value="20"/>-->
+            <!--<property name="hibernate.c3p0.timeout" value="500"/>-->
+            <!--<property name="hibernate.c3p0.max_statements" value="50"/>-->
+            <!--<property name="hibernate.c3p0.idle_test_period" value="2000"/>-->
+        <!--</properties>-->
+    <!--</persistence-unit>-->
 
     <persistence-unit transaction-type="RESOURCE_LOCAL" name="worldUnit">
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <properties>
-
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/world?useSSL=false"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.password" value="pass"/>
@@ -55,13 +48,11 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <!-- Configuring Connection Pool -->
-
             <property name="hibernate.c3p0.min_size" value="5"/>
             <property name="hibernate.c3p0.max_size" value="20"/>
             <property name="hibernate.c3p0.timeout" value="500"/>
             <property name="hibernate.c3p0.max_statements" value="50"/>
             <property name="hibernate.c3p0.idle_test_period" value="2000"/>
-
         </properties>
 
     </persistence-unit>

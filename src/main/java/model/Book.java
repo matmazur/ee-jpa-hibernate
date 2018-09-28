@@ -1,11 +1,11 @@
 package model;
 
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
+@Table(name = "book")
 public class Book implements Serializable {
 
     private static final long serialVersionUID = 1L;
