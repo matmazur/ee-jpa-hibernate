@@ -40,7 +40,7 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/world?useSSL=false"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/world?useSSL=false&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.password" value="pass"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>

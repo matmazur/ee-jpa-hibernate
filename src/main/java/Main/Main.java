@@ -16,7 +16,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        String jdbcUrl = "jdbc:mysql://localhost:3306/test?useSSL=false";
+        String jdbcUrl = "jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
         String user = "root";
         String password = "pass";
 

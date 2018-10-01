@@ -42,7 +42,12 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
             <scope>provided</scope>
         </dependency>
 
-
+        <!-- WORKS WITH MAIN - doesnt work with webapp-->
+        <!--<dependency>-->
+            <!--<groupId>dom4j</groupId>-->
+            <!--<artifactId>dom4j</artifactId>-->
+            <!--<version>1.6.1</version>-->
+        <!--</dependency>-->
 
         <!-- Hibernate -->
         <dependency>
