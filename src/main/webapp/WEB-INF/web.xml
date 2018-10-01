@@ -12,7 +12,7 @@
     <data-source>
         <name>java:ds/data</name>
         <class-name>com.mysql.cj.jdbc.MysqlDataSource</class-name>
-        <url>jdbc:mysql://localhost:3306/test?useSSL=false</url>
+        <url>jdbc:mysql://localhost:3306/test?useSSL=false&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC</url>
         <user>root</user>
         <password>pass</password>
     </data-source>
